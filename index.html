@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cafeteria Martinez | Café de especialidad</title>
+  <meta name="description" content="Cafeteria Martinez: café tostado cada mañana, postres y bebidas frías. Arma tu pedido y reserva tu visita.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Courier+Prime:wght@400;700&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="encabezado">
+    <a class="marca" href="#inicio">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR97jmXXLcpn3m05wzmDJ2t1ep2OYQMvtb3etC7a3vz0w&s=10" alt="" width="40" height="40">
+      <strong>Cafeteria Martinez</strong>
+    </a>
+    <nav aria-label="Navegación principal">
+      <ul class="menu-nav">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#menu">Carta</a></li>
+        <li><a href="#carrito">Pedido (<span id="contador">0</span>)</a></li>
+        <li><a href="#contacto">Reservas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <article class="hero-texto">
+        <h1>Tostado esta mañana. En tu taza esta tarde.</h1>
+        <p>Café de granos locales, postres del horno de la casa y bebidas frías para los días de calor.</p>
+        <a class="boton" href="#menu">Ver Menú</a>
+      </article>
+      <figure class="hero-imagen">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4KlkSchA9cQtvHoHTS65C7fv0UOc3pojI4fqFzDqg3A&s=10" alt="Taza de café sobre un plato rojo y verde">
+        <figcaption>Tostado hoy</figcaption>
+      </figure>
+    </section>
+
+    <section id="menu" class="carta">
+      <h2>La carta</h2>
+
+      <section aria-labelledby="cat-cafes">
+        <h3 id="cat-cafes">Cafés</h3>
+        <article class="producto">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBv7R96f_8_WonRu4ML4-OW1fyYRNTRs4BvZ0_3W3Zmw&s=10" alt="Espresso" loading="lazy" width="72" height="72">
+          <h4>Espresso</h4>
+          <p class="descripcion">Corto e intenso, con notas de cacao.</p>
+          <p class="precio">$1.50</p>
+          <button class="boton" type="button" data-id="1" data-nombre="Espresso" data-precio="1.50">Agregar al carrito</button>
+        </article>
+        <article class="producto">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_jIZMy2zdeZPQthKa0o940VKdJDQlMwjSz_eJatfBhA&s=10" alt="Capuchino" loading="lazy" width="72" height="72">
+          <h4>Capuchino</h4>
+          <p class="descripcion">Espresso, leche vaporizada y espuma suave.</p>
+          <p class="precio">$2.25</p>
+          <button class="boton" type="button" data-id="2" data-nombre="Capuchino" data-precio="2.25">Agregar al carrito</button>
+        </article>
+      </section>
+
+      <section aria-labelledby="cat-postres">
+        <h3 id="cat-postres">Postres</h3>
+        <article class="producto">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUR9McX4uLA1DyVnQz2YjKFlPoP8wvwKpz1h-XBAEfjg&s=10" alt="Croissant" loading="lazy" width="72" height="72">
+          <h4>Croissant de mantequilla</h4>
+          <p class="descripcion">Hojaldrado, horneado cada mañana.</p>
+          <p class="precio">$1.75</p>
+          <button class="boton" type="button" data-id="3" data-nombre="Croissant de mantequilla" data-precio="1.75">Agregar al carrito</button>
+        </article>
+        <article class="producto">
+          <img src="data:image/jpeg;base64,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" alt="Pastel de chocolate" loading="lazy" width="72" height="72">
+          <h4>Pastel de chocolate</h4>
+          <p class="descripcion">Tres capas de bizcocho con cobertura de cacao.</p>
+          <p class="precio">$3.00</p>
+          <button class="boton" type="button" data-id="4" data-nombre="Pastel de chocolate" data-precio="3.00">Agregar al carrito</button>
+        </article>
+      </section>
+
+      <section aria-labelledby="cat-frias">
+        <h3 id="cat-frias">Bebidas frías</h3>
+        <article class="producto">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi4mvWpAG-jo1YFb6NqMCPblcU1jLFyGJp01GiNYb5Kw&s=10" alt="Café frío con hielo" loading="lazy" width="72" height="72">
+          <h4>Cold brew</h4>
+          <p class="descripcion">Café infusionado en frío durante 12 horas.</p>
+          <p class="precio">$2.75</p>
+          <button class="boton" type="button" data-id="5" data-nombre="Cold brew" data-precio="2.75">Agregar al carrito</button>
+        </article>
+        <article class="producto">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpscueTqu9yf04XSpz7vNBwEMdJ01IEIXBeqFh3R8tFw&s=10" alt="Frapé de caramelo" loading="lazy" width="72" height="72">
+          <h4>Frapé de caramelo</h4>
+          <p class="descripcion">Café licuado con hielo, caramelo y crema.</p>
+          <p class="precio">$3.25</p>
+          <button class="boton" type="button" data-id="6" data-nombre="Frapé de caramelo" data-precio="3.25">Agregar al carrito</button>
+        </article>
+      </section>
+    </section>
+
+    <section id="carrito">
+      <article class="ticket">
+        <h2>Tu pedido</h2>
+        <p id="carrito-vacio">Aún no hay nada aquí. Elige algo de la carta.</p>
+        <ul id="lista-carrito" aria-live="polite"></ul>
+        <p class="total">Total <strong id="total">$0.00</strong></p>
+        <button id="btn-vaciar" class="boton boton-secundario" type="button">Vaciar carrito</button>
+      </article>
+    </section>
+
+    <section id="contacto" class="reservas">
+      <h2>Reserva tu mesa o escríbenos</h2>
+      <form id="formulario" novalidate>
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Tu nombre completo">
+
+        <label for="correo">Correo electrónico</label>
+        <input type="email" id="correo" name="correo" autocomplete="email" placeholder="tucorreo@ejemplo.com">
+
+        <label for="fecha">Fecha y hora de visita</label>
+        <input type="datetime-local" id="fecha" name="fecha">
+
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="4" placeholder="¿Cuántas personas son? ¿Alguna alergia?"></textarea>
+
+        <button class="boton" type="submit">Enviar reserva</button>
+        <p id="mensaje-form" role="alert"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <section>
+      <h2>Horario</h2>
+      <ul>
+        <li>Lunes a viernes: 7:00 a. m. a 8:00 p. m.</li>
+        <li>Sábados y domingos: 8:00 a. m. a 6:00 p. m.</li>
+      </ul>
+    </section>
+    <nav aria-label="Redes sociales">
+      <h2>Redes</h2>
+      <ul>
+        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a></li>
+      </ul>
+    </nav>
+    <small>&copy; 2026 La Tostadora. Proyecto escolar. Todos los derechos reservados.</small>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
